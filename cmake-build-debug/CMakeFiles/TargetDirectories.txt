@@ -1,0 +1,3 @@
+/mnt/sda2/VS/5_semestr/IMS/cmake-build-debug/CMakeFiles/IMS.dir
+/mnt/sda2/VS/5_semestr/IMS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/sda2/VS/5_semestr/IMS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
