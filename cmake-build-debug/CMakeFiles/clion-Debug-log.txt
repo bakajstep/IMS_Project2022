@@ -1,4 +1,0 @@
-/home/sbakaj/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/sbakaj/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/223.7571.171/bin/ninja/linux/ninja -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G Ninja -S /mnt/sda2/VS/5_semestr/IMS -B /mnt/sda2/VS/5_semestr/IMS/cmake-build-debug
--- Configuring done
--- Generating done
--- Build files have been written to: /mnt/sda2/VS/5_semestr/IMS/cmake-build-debug
