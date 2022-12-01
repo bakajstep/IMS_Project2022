@@ -18,7 +18,7 @@ unsigned int sestaCast = 540 * MIN_TO_DS;
 
 //pocty jednotek na jednotlivych armad
 unsigned int pocetGondorPomoc = 10000;
-unsigned int pocetMordor = 75000;
+int pocetMordor = 75000;
 unsigned int pocetRohan = 6000;
 unsigned int pocetGondorMesto = 8500;
 
@@ -28,26 +28,31 @@ int main() {
     Init(0, celkovaDoba);
     (new Bitva)->Activate();
     Run();
-    info("---------------- Pocty ztrat v jednotlivych fazich ----------------");
-    info("Faze bitvy -                      1     2       3       4       5       6");
-    info("Armada Mordoru:                " + std::to_string(mordorStatistiky[0]) + "  " +
-         std::to_string(mordorStatistiky[1]) + "  " +
-         std::to_string(mordorStatistiky[2]) + "  " + std::to_string(mordorStatistiky[3]) + "  " +
-         std::to_string(mordorStatistiky[4]) + "  " + std::to_string(mordorStatistiky[5]));
-    info("Armada Mordoru:                " + std::to_string(mordorStatistiky[0]) + "  " +
-         std::to_string(mordorStatistiky[1]) + "  " +
-         std::to_string(mordorStatistiky[2]) + "  " + std::to_string(mordorStatistiky[3]) + "  " +
-         std::to_string(mordorStatistiky[4]) + "  " + std::to_string(mordorStatistiky[5]));
-    info("Armada Mordoru:                " + std::to_string(mordorStatistiky[0]) + "  " +
-         std::to_string(mordorStatistiky[1]) + "  " +
-         std::to_string(mordorStatistiky[2]) + "  " + std::to_string(mordorStatistiky[3]) + "  " +
-         std::to_string(mordorStatistiky[4]) + "  " + std::to_string(mordorStatistiky[5]));
-    info("Armada Gondoru posily:         " + std::to_string(pocetGondorPomoc));
     info("Konec simulace");
-    info("-------------------- Koncove statistiky vojaku --------------------");
-    info("Armada Mordoru:                " + std::to_string(pocetMordor));
-    info("Armada Gondoru vojaci z mesta: " + std::to_string(pocetGondorMesto));
-    info("Armada Rohanu:                 " + std::to_string(pocetRohan));
-    info("Armada Gondoru posily:         " + std::to_string(pocetGondorPomoc));
-    info("Konec simulace");
+    cout << "---------------- Pocty ztrat v jednotlivych fazich ----------------" << endl;
+    char buf[256];
+    char pattern[]  = "%15s     %7d %7d %7d %7d %7d %7d";
+    sprintf(buf, pattern, "", 1, 2, 3, 4, 5, 6);
+    cout << buf << endl;
+    sprintf(buf, pattern, "Mordor", mordorStatistiky[0], mordorStatistiky[1], mordorStatistiky[2], mordorStatistiky[3], mordorStatistiky[4], mordorStatistiky[5]);
+    cout << buf << endl;
+    sprintf(buf, pattern, "Gondor mesto", gondorMestoStatistiky[0], gondorMestoStatistiky[1], gondorMestoStatistiky[2], gondorMestoStatistiky[3], gondorMestoStatistiky[4], gondorMestoStatistiky[5]);
+    cout << buf << endl;
+    sprintf(buf, pattern, "Rohan", 0, 0, rohanStatistiky[0], rohanStatistiky[1], rohanStatistiky[2], rohanStatistiky[3]);
+    cout << buf << endl;
+    sprintf(buf, pattern, "Mordor", 0, 0, 0, 0, 0, gondorPomocStatistiky);
+    cout << buf << endl;
+    cout << "-------------------- Koncove statistiky vojaku --------------------" << endl;
+    char pattern1[]  = "%22s     %7d";
+    sprintf(buf, pattern1, "Armada Mordoru", pocetMordor);
+    cout << buf << endl;
+    sprintf(buf, pattern1, "Armada Gondoru mesto", pocetGondorMesto);
+    cout << buf << endl;
+    sprintf(buf, pattern1, "Armada Rohanu", pocetRohan);
+    cout << buf << endl;
+    sprintf(buf, pattern1, "Armada Gondoru posily", pocetGondorPomoc);
+    cout << buf << endl;
+    cout << "---------------------- Delka trvani simulace ----------------------" << endl;
+    cout << "Cas:" << Time/10/60 << " min" << endl;
+    cout << "Cas:" << Time/10/60/60 << " hod" << endl;
 }
